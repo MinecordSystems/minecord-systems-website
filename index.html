@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -16,13 +16,13 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background-image: url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg?ex=69ed1a16&is=69ebc896&hm=76c8eba8150d42c1c3d3f9c7d7a04846fe5ebb05318baede1807664d55e3dd09');
+      background-image: url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* Cobweb banner at top */
+    /* Cobweb banner */
     .cobweb-top {
       position: fixed;
       top: 0;
@@ -90,12 +90,84 @@
     .nav-link a:hover {
       text-decoration: underline;
     }
+
+    /* Chat Button */
+    .chat-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ff7a00;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 26px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #ff4500;
+      z-index: 9999;
+    }
+
+    /* Chat Box */
+    .chat-box {
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      width: 260px;
+      background: #1e1e1e;
+      border: 2px solid #ff7a00;
+      border-radius: 10px;
+      padding: 10px;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 0 15px #ff4500;
+    }
+
+    .chat-box textarea {
+      width: 100%;
+      height: 120px;
+      border-radius: 6px;
+      border: none;
+      padding: 8px;
+      resize: none;
+      background: #2b2b2b;
+      color: white;
+    }
+
+    .send-btn, .close-btn {
+      width: 48%;
+      padding: 8px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .send-btn {
+      background: #ff7a00;
+      color: black;
+    }
+
+    .close-btn {
+      background: #444;
+      color: white;
+    }
   </style>
 </head>
 <body>
 
   <!-- Cobweb banner -->
-  <img class="cobweb-top" src="/attachments/5etyaBykG55Jp6PKSc5ok.jpeg">
+  <img class="cobweb-top" src="/attachments/cX5JDM4gtExPKCPe7Xc8F.jpeg">
+
+  <!-- Chat Button -->
+  <button class="chat-btn" onclick="openChatBox()">💬</button>
+
+  <!-- Chat Popup -->
+  <div id="chatBox" class="chat-box">
+    <textarea id="chatMessage" placeholder="Type your message..."></textarea>
+    <button class="send-btn" onclick="sendEmail()">Send</button>
+    <button class="close-btn" onclick="closeChatBox()">Close</button>
+  </div>
 
   <main>
     <h1>🎃 Minecord Systems 🎃</h1>
@@ -111,12 +183,7 @@
       • Event Announcer
     </p>
 
-    <a
-      class="btn-main"
-      href="https://discord.gg/NXeUTSdgf5"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a class="btn-main" href="https://discord.gg/NXeUTSdgf5" target="_blank">
       Join Minecord Systems
     </a>
 
@@ -125,6 +192,26 @@
       <a href="advertisements.html">Go to Advertisements page</a>
     </div>
   </main>
+
+<script>
+function openChatBox() {
+  document.getElementById("chatBox").style.display = "block";
+}
+
+function closeChatBox() {
+  document.getElementById("chatBox").style.display = "none";
+}
+
+function sendEmail() {
+  const msg = document.getElementById("chatMessage").value;
+  if (!msg.trim()) return alert("Please type a message first.");
+
+  const mailto = `mailto:minecordsystems@hotmail.com?subject=Website Message&body=${encodeURIComponent(msg)}`;
+  window.location.href = mailto;
+
+  closeChatBox();
+}
+</script>
 
 </body>
 </html>
