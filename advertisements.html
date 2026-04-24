@@ -1,128 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Advertisements – Minecord Systems</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #020617;
-      color: #e5e7eb;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      background-image: url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg?ex=69ed1a16&is=69ebc896&hm=76c8eba8150d42c1c3d3f9c7d7a04846fe5ebb05318baede1807664d55e3dd09');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+    <meta charset="UTF-8">
+    <title>Advertisements – Minecord Systems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Cobweb banner at top */
-    .cobweb-top {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: 9999;
-      pointer-events: none;
-    }
+    <style>
 
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      color: #ff7518;
-      text-shadow: 0 0 15px #ff4500;
-      margin-top: 120px;
-    }
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            background:#020617 url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg') center/cover no-repeat;
+            color:#eee;
+            min-height:100vh;
+            padding:20px 10px;
+            text-align:center;
+            position:relative;
+        }
 
-    .buttons-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 400px;
-      margin-bottom: 2rem;
-    }
+        /* cobweb top-left */
+        .cobweb {
+            width:140px;
+            position:absolute;
+            top:0;
+            left:0;
+            opacity:.9;
+            pointer-events:none;
+        }
 
-    .btn-ad {
-      padding: 0.9rem 1.2rem;
-      border-radius: 0.75rem;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      background: linear-gradient(135deg, #ff0000, #ff7a00);
-      text-decoration: none;
-      text-align: center;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 0 15px #ff4500;
-    }
+        h1 {
+            margin-top:120px;
+            font-size:2.2rem;
+            color:#ff7518;
+            text-shadow:0 0 12px #ff4500;
+        }
 
-    .btn-ad:hover {
-      transform: translateY(-3px);
-    }
+        .nav-link {
+            margin:15px 0 25px;
+            color:#ffa94d;
+        }
 
-    .nav-link {
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-      color: #ffa94d;
-      text-align: center;
-    }
+        .nav-link a { color:#ff7a00; }
 
-    .nav-link a {
-      color: #ff7a00;
-      text-decoration: none;
-    }
+        .buttons-container {
+            max-width:400px;
+            margin:0 auto;
+            display:flex;
+            flex-direction:column;
+            gap:12px;
+        }
 
-    .nav-link a:hover {
-      text-decoration: underline;
-    }
+        .btn-ad {
+            padding:12px;
+            border-radius:8px;
+            background:linear-gradient(135deg, red, #ff7a00);
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+            box-shadow:0 0 10px #ff4500;
+        }
 
-    .footer-text {
-      font-size: 0.9rem;
-      color: #ffa94d;
-      text-align: center;
-      margin-top: auto;
-      padding-top: 1rem;
-      font-style: italic;
-    }
-  </style>
+        .btn-ad:hover { transform:translateY(-3px); }
+
+        .footer-text {
+            margin-top:40px;
+            color:#ffa94d;
+            font-style:italic;
+        }
+
+        /* chat button */
+        .chat-btn {
+            position:fixed;
+            top:20px;
+            right:20px;
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            border:none;
+            background:#ff7a00;
+            font-size:26px;
+            cursor:pointer;
+            box-shadow:0 0 10px #ff4500;
+            z-index:9999;
+        }
+
+        /* chat popup */
+        .chat-box {
+            position:fixed;
+            top:90px;
+            right:20px;
+            width:260px;
+            background:#1e1e1e;
+            border:2px solid #ff7a00;
+            border-radius:10px;
+            padding:10px;
+            display:none;
+            z-index:9999;
+        }
+
+        .chat-box textarea {
+            width:100%;
+            height:120px;
+            background:#2b2b2b;
+            border:none;
+            color:white;
+            padding:8px;
+            resize:none;
+            border-radius:6px;
+        }
+
+        .send-btn, .close-btn {
+            width:48%;
+            padding:8px;
+            margin-top:8px;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        .send-btn { background:#ff7a00; color:black; }
+        .close-btn { background:#444; color:white; }
+
+    </style>
 </head>
+
 <body>
 
-  <!-- Cobweb banner -->
-  <img class="cobweb-top" src="/attachments/5etyaBykG55Jp6PKSc5ok.jpeg">
+    <!-- cobweb -->
+    <img class="cobweb" src="/attachments/cX5JDM4gtExPKCPe7Xc8F.jpeg">
 
-  <h1>🎃 Advertised Servers 🎃</h1>
+    <!-- chat button -->
+    <button class="chat-btn" onclick="openChatBox()">💬</button>
 
-  <div class="nav-link">
-    <a href="index.html">Back to Minecord Systems home</a>
-  </div>
+    <!-- chat popup -->
+    <div id="chatBox" class="chat-box">
+        <textarea id="chatMessage" placeholder="Type your message..."></textarea>
+        <button class="send-btn" onclick="sendEmail()">Send</button>
+        <button class="close-btn" onclick="closeChatBox()">Close</button>
+    </div>
 
-  <div class="buttons-container">
+    <h1>🎃 Advertised Servers 🎃</h1>
 
-    <a class="btn-ad" href="https://discord.gg/4zKKdWK25t" target="_blank">Leonempire</a>
-    <a class="btn-ad" href="https://discord.gg/mATTYtc5Wz" target="_blank">Hangout</a>
-    <a class="btn-ad" href="https://discord.gg/V36N7n5Cj7" target="_blank">Cosmophorical Programming Studios</a>
-    <a class="btn-ad" href="https://discord.gg/EFV6XzAurv" target="_blank">Leonserver</a>
-    <a class="btn-ad" href="https://discord.gg/cUg5meqggg" target="_blank">TONY's Dead Server</a>
-    <a class="btn-ad" href="https://discord.gg/g6dRnSjEa3" target="_blank">Blazefire Union</a>
-    <a class="btn-ad" href="https://discord.gg/RQXgcHPGN4" target="_blank">INTF Minecraft Server</a>
-    <a class="btn-ad" href="https://discord.gg/H7zBcFKNN6" target="_blank">INTF SMP Events & Announcements</a>
+    <div class="nav-link">
+        <a href="index.html">Back to Minecord Systems home</a>
+    </div>
 
-  </div>
+    <div class="buttons-container">
 
-  <div class="footer-text">
-    Suggest More @minecordsystems@hotmail.com
-  </div>
+        <a class="btn-ad" href="https://discord.gg/4zKKdWK25t" target="_blank">Leonempire</a>
+        <a class="btn-ad" href="https://discord.gg/mATTYtc5Wz" target="_blank">Hangout</a>
+        <a class="btn-ad" href="https://discord.gg/V36N7n5Cj7" target="_blank">Cosmophorical Programming Studios</a>
+        <a class="btn-ad" href="https://discord.gg/EFV6XzAurv" target="_blank">Leonserver</a>
+        <a class="btn-ad" href="https://discord.gg/cUg5meqggg" target="_blank">TONY's Dead Server</a>
+        <a class="btn-ad" href="https://discord.gg/g6dRnSjEa3" target="_blank">Blazefire Union</a>
+        <a class="btn-ad" href="https://discord.gg/RQXgcHPGN4" target="_blank">INTF Minecraft Server</a>
+        <a class="btn-ad" href="https://discord.gg/H7zBcFKNN6" target="_blank">INTF SMP Events & Announcements</a>
+
+    </div>
+
+    <div class="footer-text">
+        Suggest More @ minecordsystems@hotmail.com
+    </div>
+
+<script>
+function openChatBox(){
+    document.getElementById("chatBox").style.display="block";
+}
+
+function closeChatBox(){
+    document.getElementById("chatBox").style.display="none";
+}
+
+function sendEmail(){
+    let msg = document.getElementById("chatMessage").value;
+    if(!msg.trim()){
+        alert("Please type a message first.");
+        return;
+    }
+    let mail = "mailto:minecordsystems@hotmail.com?subject=Website Message&body=" + encodeURIComponent(msg);
+    window.location.href = mail;
+    closeChatBox();
+}
+</script>
 
 </body>
 </html>
