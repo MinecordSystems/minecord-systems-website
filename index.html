@@ -1,217 +1,178 @@
-      <!DOCTYPE html>
-<html lang="en">
+ <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Minecord Systems</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background-image: url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+    <meta charset="UTF-8">
+    <title>Minecord Systems</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    /* Cobweb banner */
-    .cobweb-top {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: 9999;
-      pointer-events: none;
-    }
+    <style>
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-      color: #ff7518;
-      text-shadow: 0 0 15px #ff4500;
-      margin-top: 120px;
-    }
+        body {
+            margin:0;
+            font-family: Arial, sans-serif;
+            background:#0f172a url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg') center/cover no-repeat;
+            color:#eee;
+            text-align:center;
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-      color: #ffa94d;
-      text-shadow: 0 0 10px #ff6600;
-    }
+        /* cobweb top-left */
+        .cobweb {
+            width:140px;
+            position:absolute;
+            top:0;
+            left:0;
+            opacity:.9;
+            pointer-events:none;
+        }
 
-    p {
-      max-width: 600px;
-      margin: 0 auto 1.5rem auto;
-      line-height: 1.5;
-      font-size: 1rem;
-    }
+        h1 {
+            margin-top:120px;
+            font-size:3rem;
+            color:#ff7518;
+            text-shadow:0 0 12px #ff4500;
+        }
 
-    .btn-main {
-      padding: 0.9rem 1.8rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0f172a;
-      background: linear-gradient(135deg, #ff0000, #ff7a00);
-      box-shadow: 0 0 15px #ff4500;
-      transition: transform 0.15s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
+        h2 {
+            margin:20px 0 10px;
+            color:#ffa94d;
+            text-shadow:0 0 8px #ff6600;
+        }
 
-    .btn-main:hover {
-      transform: translateY(-3px);
-    }
+        p {
+            max-width:600px;
+            margin:0 auto 20px;
+            line-height:1.5;
+        }
 
-    .nav-link {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-      color: #ffa94d;
-    }
+        .btn-main {
+            padding:12px 25px;
+            border-radius:999px;
+            background:linear-gradient(135deg, red, #ff7a00);
+            border:none;
+            color:#111;
+            font-weight:bold;
+            cursor:pointer;
+            text-decoration:none;
+            box-shadow:0 0 12px #ff4500;
+        }
 
-    .nav-link a {
-      color: #ff7a00;
-      text-decoration: none;
-    }
+        .btn-main:hover { transform:translateY(-3px); }
 
-    .nav-link a:hover {
-      text-decoration: underline;
-    }
+        .nav-link { margin-top:25px; color:#ffa94d; }
+        .nav-link a { color:#ff7a00; }
 
-    /* Chat Button */
-    .chat-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #ff7a00;
-      border: none;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 26px;
-      cursor: pointer;
-      box-shadow: 0 0 12px #ff4500;
-      z-index: 9999;
-    }
+        /* chat button */
+        .chat-btn {
+            position:fixed;
+            top:20px;
+            right:20px;
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            border:none;
+            background:#ff7a00;
+            font-size:26px;
+            cursor:pointer;
+            box-shadow:0 0 10px #ff4500;
+            z-index:9999;
+        }
 
-    /* Chat Box */
-    .chat-box {
-      position: fixed;
-      top: 90px;
-      right: 20px;
-      width: 260px;
-      background: #1e1e1e;
-      border: 2px solid #ff7a00;
-      border-radius: 10px;
-      padding: 10px;
-      display: none;
-      z-index: 9999;
-      box-shadow: 0 0 15px #ff4500;
-    }
+        /* chat popup */
+        .chat-box {
+            position:fixed;
+            top:90px;
+            right:20px;
+            width:260px;
+            background:#1e1e1e;
+            border:2px solid #ff7a00;
+            border-radius:10px;
+            padding:10px;
+            display:none;
+            z-index:9999;
+        }
 
-    .chat-box textarea {
-      width: 100%;
-      height: 120px;
-      border-radius: 6px;
-      border: none;
-      padding: 8px;
-      resize: none;
-      background: #2b2b2b;
-      color: white;
-    }
+        .chat-box textarea {
+            width:100%;
+            height:120px;
+            background:#2b2b2b;
+            border:none;
+            color:white;
+            padding:8px;
+            resize:none;
+            border-radius:6px;
+        }
 
-    .send-btn, .close-btn {
-      width: 48%;
-      padding: 8px;
-      margin-top: 8px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+        .send-btn, .close-btn {
+            width:48%;
+            padding:8px;
+            margin-top:8px;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-weight:bold;
+        }
 
-    .send-btn {
-      background: #ff7a00;
-      color: black;
-    }
+        .send-btn { background:#ff7a00; color:black; }
+        .close-btn { background:#444; color:white; }
 
-    .close-btn {
-      background: #444;
-      color: white;
-    }
-  </style>
+    </style>
 </head>
+
 <body>
 
-  <!-- Cobweb banner -->
-  <img class="cobweb-top" src="/attachments/cX5JDM4gtExPKCPe7Xc8F.jpeg">
+    <!-- cobweb -->
+    <img class="cobweb" src="/attachments/cX5JDM4gtExPKCPe7Xc8F.jpeg">
 
-  <!-- Chat Button -->
-  <button class="chat-btn" onclick="openChatBox()">💬</button>
+    <!-- chat button -->
+    <button class="chat-btn" onclick="openChatBox()">💬</button>
 
-  <!-- Chat Popup -->
-  <div id="chatBox" class="chat-box">
-    <textarea id="chatMessage" placeholder="Type your message..."></textarea>
-    <button class="send-btn" onclick="sendEmail()">Send</button>
-    <button class="close-btn" onclick="closeChatBox()">Close</button>
-  </div>
-
-  <main>
-    <h1>🎃 Minecord Systems 🎃</h1>
-
-    <h2>About Minecord Systems:</h2>
-    <p>
-      Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong>.
-    </p>
-
-    <h2>Bots We Have Made:</h2>
-    <p>
-      • Minecord Systems<br>
-      • Event Announcer
-    </p>
-
-    <a class="btn-main" href="https://discord.gg/NXeUTSdgf5" target="_blank">
-      Join Minecord Systems
-    </a>
-
-    <div class="nav-link">
-      <span>Want to see other servers? </span>
-      <a href="advertisements.html">Go to Advertisements page</a>
+    <!-- chat popup -->
+    <div id="chatBox" class="chat-box">
+        <textarea id="chatMessage" placeholder="Type your message..."></textarea>
+        <button class="send-btn" onclick="sendEmail()">Send</button>
+        <button class="close-btn" onclick="closeChatBox()">Close</button>
     </div>
-  </main>
+
+    <main>
+        <h1>🎃 Minecord Systems 🎃</h1>
+
+        <h2>About Minecord Systems:</h2>
+        <p>Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong>.</p>
+
+        <h2>Bots We Have Made:</h2>
+        <p>• Minecord Systems<br>• Event Announcer</p>
+
+        <a class="btn-main" href="https://discord.gg/NXeUTSdgf5" target="_blank">Join Minecord Systems</a>
+
+        <div class="nav-link">
+            Want to see other servers? <a href="advertisements.html">Go to Advertisements page</a>
+        </div>
+    </main>
 
 <script>
-function openChatBox() {
-  document.getElementById("chatBox").style.display = "block";
+function openChatBox(){
+    document.getElementById("chatBox").style.display="block";
 }
 
-function closeChatBox() {
-  document.getElementById("chatBox").style.display = "none";
+function closeChatBox(){
+    document.getElementById("chatBox").style.display="none";
 }
 
-function sendEmail() {
-  const msg = document.getElementById("chatMessage").value;
-  if (!msg.trim()) return alert("Please type a message first.");
-
-  const mailto = `mailto:minecordsystems@hotmail.com?subject=Website Message&body=${encodeURIComponent(msg)}`;
-  window.location.href = mailto;
-
-  closeChatBox();
+function sendEmail(){
+    let msg = document.getElementById("chatMessage").value;
+    if(!msg.trim()){
+        alert("Please type a message first.");
+        return;
+    }
+    let mail = "mailto:minecordsystems@hotmail.com?subject=Website Message&body=" + encodeURIComponent(msg);
+    window.location.href = mail;
+    closeChatBox();
 }
 </script>
 
 </body>
-</html>
+</html>                 
