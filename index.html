@@ -25,7 +25,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
     }
 
     h2 {
@@ -75,11 +75,13 @@
       text-decoration: underline;
     }
 
+    /* Bigger logo + hide black background using blend mode */
     .logo {
-      width: 60px;
-      height: 60px;
-      border-radius: 10px;
+      width: 110px;
+      height: 110px;
       object-fit: cover;
+      mix-blend-mode: lighten;
+      border-radius: 12px;
     }
   </style>
 </head>
@@ -88,30 +90,5 @@
     <h1>
       <img
         class="logo"
-        src="https://images.weserv.nl/?url=cdn.discordapp.com/attachments/1487781004637765664/1497317489564975124/copilot_image_1774784193557.jpeg"
-        alt="Minecord Logo"
-      />
-      <strong>Minecord Systems</strong>
-    </h1>
-
-    <h2>About Minecord Systems:</h2>
-    <p>
-      Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong>.
-    </p>
-
-    <a
-      class="btn-main"
-      href="https://discord.gg/NXeUTSdgf5"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Minecord Systems Discord Server
-    </a>
-
-    <div class="nav-link">
-      <span>Want to see other servers? </span>
-      <a href="advertisements.html">Go to Advertisements page</a>
-    </div>
-  </main>
-</body>
-</html>
+        src="https://cdn.discordapp.com/attachments/1487781004637765664/1497317489564975124/copilot_image_1774784193557.jpeg?ex=69ed1514&is=69ebc394&hm=f9b4015353e65b2f3a959e9fa83799172948bd7d3c92b6f1ceb601719e628837"
+        alt="Minecord Logo
