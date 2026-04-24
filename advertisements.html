@@ -82,6 +82,40 @@
       padding-top: 1rem;
       font-style: italic;
     }
+
+    /* Floating Ghosts */
+    .ghost {
+      position: fixed;
+      width: 80px;
+      opacity: 0.7;
+      animation: floatGhost 8s ease-in-out infinite;
+      z-index: 9999;
+    }
+
+    .ghost:nth-child(1) { top: 20%; left: -100px; animation-delay: 0s; }
+    .ghost:nth-child(2) { top: 50%; left: -120px; animation-delay: 2s; }
+    .ghost:nth-child(3) { top: 75%; left: -140px; animation-delay: 4s; }
+
+    @keyframes floatGhost {
+      0% { transform: translateX(0) translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      50% { transform: translateX(120vw) translateY(-20px); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateX(0) translateY(0); opacity: 0; }
+    }
+
+    /* Spider Webs */
+    .web {
+      position: fixed;
+      width: 150px;
+      opacity: 0.8;
+      z-index: 9998;
+    }
+
+    .web.top-left { top: 0; left: 0; }
+    .web.top-right { top: 0; right: 0; }
+    .web.bottom-left { bottom: 0; left: 0; }
+    .web.bottom-right { bottom: 0; right: 0; }
   </style>
 </head>
 <body>
@@ -92,6 +126,9 @@
   </div>
 
   <div class="buttons-container">
+
+    <a class="btn-ad" href="https://discord.gg/4zKKdWK25t" target="_blank">Leonempire</a>
+
     <a class="btn-ad" href="https://discord.gg/mATTYtc5Wz" target="_blank">Hangout</a>
     <a class="btn-ad" href="https://discord.gg/V36N7n5Cj7" target="_blank">Cosmophorical Programming Studios</a>
     <a class="btn-ad" href="https://discord.gg/EFV6XzAurv" target="_blank">Leonserver</a>
@@ -99,11 +136,23 @@
     <a class="btn-ad" href="https://discord.gg/g6dRnSjEa3" target="_blank">Blazefire Union</a>
     <a class="btn-ad" href="https://discord.gg/RQXgcHPGN4" target="_blank">INTF Minecraft Server</a>
     <a class="btn-ad" href="https://discord.gg/H7zBcFKNN6" target="_blank">INTF SMP Events & Announcements</a>
+
   </div>
 
   <div class="footer-text">
     Suggest More @minecordsystems@hotmail.com
   </div>
+
+  <!-- Floating Ghosts -->
+  <img class="ghost" src="https://i.imgur.com/8QxQ2pP.png">
+  <img class="ghost" src="https://i.imgur.com/8QxQ2pP.png">
+  <img class="ghost" src="https://i.imgur.com/8QxQ2pP.png">
+
+  <!-- Spider Webs -->
+  <img class="web top-left" src="https://i.imgur.com/3pQeQ0M.png">
+  <img class="web top-right" src="https://i.imgur.com/3pQeQ0M.png">
+  <img class="web bottom-left" src="https://i.imgur.com/3pQeQ0M.png">
+  <img class="web bottom-right" src="https://i.imgur.com/3pQeQ0M.png">
+
 </body>
 </html>
-    
