@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-
         body {
             margin:0;
             font-family: Arial, sans-serif;
@@ -15,22 +14,16 @@
             color:#eee;
             text-align:center;
             min-height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
+            padding-top:120px;
         }
 
         h1 {
-            margin-top:120px;
             font-size:3rem;
             color:#4da6ff;
             text-shadow:0 0 10px #1e90ff;
         }
 
-        h2 {
-            margin:20px 0 10px;
-            color:#7ec8ff;
-        }
+        h2 { color:#7ec8ff; }
 
         p {
             max-width:600px;
@@ -50,117 +43,46 @@
             box-shadow:0 0 10px #1e90ff;
         }
 
-        .btn-main:hover { transform:translateY(-3px); }
-
         .nav-link { margin-top:25px; color:#7ec8ff; }
         .nav-link a { color:#4da6ff; }
 
-        /* chat button */
-        .chat-btn {
-            position:fixed;
-            top:20px;
-            right:20px;
-            width:55px;
-            height:55px;
-            border-radius:50%;
-            border:none;
+        .nav-buttons {
+            margin-top:40px;
+        }
+
+        .nav-btn {
+            padding:10px 20px;
             background:#4da6ff;
-            font-size:26px;
-            cursor:pointer;
-            box-shadow:0 0 10px #1e90ff;
-            z-index:9999;
-        }
-
-        /* chat popup */
-        .chat-box {
-            position:fixed;
-            top:90px;
-            right:20px;
-            width:260px;
-            background:#1e1e1e;
-            border:2px solid #4da6ff;
-            border-radius:10px;
-            padding:10px;
-            display:none;
-            z-index:9999;
-        }
-
-        .chat-box textarea {
-            width:100%;
-            height:120px;
-            background:#2b2b2b;
-            border:none;
-            color:white;
-            padding:8px;
-            resize:none;
-            border-radius:6px;
-        }
-
-        .send-btn, .close-btn {
-            width:48%;
-            padding:8px;
-            margin-top:8px;
-            border:none;
-            border-radius:6px;
-            cursor:pointer;
+            border-radius:8px;
+            text-decoration:none;
+            color:#111;
             font-weight:bold;
+            margin:0 10px;
+            box-shadow:0 0 10px #1e90ff;
         }
-
-        .send-btn { background:#4da6ff; color:black; }
-        .close-btn { background:#444; color:white; }
-
     </style>
 </head>
 
 <body>
 
-    <!-- chat button -->
-    <button class="chat-btn" onclick="openChatBox()">💬</button>
+    <h1>Minecord Systems</h1>
 
-    <!-- chat popup -->
-    <div id="chatBox" class="chat-box">
-        <textarea id="chatMessage" placeholder="Type your message..."></textarea>
-        <button class="send-btn" onclick="sendEmail()">Send</button>
-        <button class="close-btn" onclick="closeChatBox()">Close</button>
+    <h2>About Minecord Systems:</h2>
+    <p>Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong>.</p>
+
+    <h2>Bots We Have Made:</h2>
+    <p>• Minecord Systems<br>• Event Announcer</p>
+
+    <a class="btn-main" href="https://discord.gg/NXeUTSdgf5" target="_blank">Join Minecord Systems</a>
+
+    <div class="nav-link">
+        Want to see other servers? <a href="advertisements.html">Go to Advertisements page</a>
     </div>
 
-    <main>
-        <h1>Minecord Systems</h1>
-
-        <h2>About Minecord Systems:</h2>
-        <p>Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong>.</p>
-
-        <h2>Bots We Have Made:</h2>
-        <p>• Minecord Systems<br>• Event Announcer</p>
-
-        <a class="btn-main" href="https://discord.gg/NXeUTSdgf5" target="_blank">Join Minecord Systems</a>
-
-        <div class="nav-link">
-            Want to see other servers? <a href="advertisements.html">Go to Advertisements page</a>
-        </div>
-    </main>
-
-<script>
-function openChatBox(){
-    document.getElementById("chatBox").style.display="block";
-}
-
-function closeChatBox(){
-    document.getElementById("chatBox").style.display="none";
-}
-
-function sendEmail(){
-    let msg = document.getElementById("chatMessage").value;
-    if(!msg.trim()){
-        alert("Please type a message first.");
-        return;
-    }
-    let mail = "mailto:minecordsystems@hotmail.com?subject=Website Message&body=" + encodeURIComponent(msg);
-    window.location.href = mail;
-    closeChatBox();
-}
-</script>
+    <div class="nav-buttons">
+        <a class="nav-btn" href="contact.html">← Back</a>
+        <a class="nav-btn" href="advertisements.html">Next →</a>
+    </div>
 
 </body>
-</html>
-        
+</html>                 
