@@ -1,2 +1,5 @@
 # minecord-systems-website 
-# By Violentkight Universal
+### By Violentkight Universal
+## READ BELOW
+Developer: Minecord Systems
+...
