@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Minecord Systems</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
@@ -10,7 +11,7 @@
         body {
             margin:0;
             font-family: Arial, sans-serif;
-            background:#0f172a
+            background:#0f172a url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg') center/cover no-repeat;
             color:#eee;
             text-align:center;
             min-height:100vh;
@@ -19,27 +20,16 @@
             justify-content:center;
         }
 
-        /* cobweb top-left */
-        .cobweb {
-            width:140px;
-            position:absolute;
-            top:0;
-            left:0;
-            opacity:.9;
-            pointer-events:none;
-        }
-
         h1 {
             margin-top:120px;
             font-size:3rem;
-            color:#ff7518;
-            text-shadow:0 0 12px #ff4500;
+            color:#4da6ff;
+            text-shadow:0 0 10px #1e90ff;
         }
 
         h2 {
             margin:20px 0 10px;
-            color:#ffa94d;
-            text-shadow:0 0 8px #ff6600;
+            color:#7ec8ff;
         }
 
         p {
@@ -51,19 +41,19 @@
         .btn-main {
             padding:12px 25px;
             border-radius:999px;
-            background:linear-gradient(135deg, red, #ff7a00);
+            background:linear-gradient(135deg, #4da6ff, #1e90ff);
             border:none;
             color:#111;
             font-weight:bold;
             cursor:pointer;
             text-decoration:none;
-            box-shadow:0 0 12px #ff4500;
+            box-shadow:0 0 10px #1e90ff;
         }
 
         .btn-main:hover { transform:translateY(-3px); }
 
-        .nav-link { margin-top:25px; color:#ffa94d; }
-        .nav-link a { color:#ff7a00; }
+        .nav-link { margin-top:25px; color:#7ec8ff; }
+        .nav-link a { color:#4da6ff; }
 
         /* chat button */
         .chat-btn {
@@ -74,10 +64,10 @@
             height:55px;
             border-radius:50%;
             border:none;
-            background:#ff7a00;
+            background:#4da6ff;
             font-size:26px;
             cursor:pointer;
-            box-shadow:0 0 10px #ff4500;
+            box-shadow:0 0 10px #1e90ff;
             z-index:9999;
         }
 
@@ -88,7 +78,7 @@
             right:20px;
             width:260px;
             background:#1e1e1e;
-            border:2px solid #ff7a00;
+            border:2px solid #4da6ff;
             border-radius:10px;
             padding:10px;
             display:none;
@@ -116,16 +106,13 @@
             font-weight:bold;
         }
 
-        .send-btn { background:#ff7a00; color:black; }
+        .send-btn { background:#4da6ff; color:black; }
         .close-btn { background:#444; color:white; }
 
     </style>
 </head>
 
 <body>
-
-    <!-- cobweb -->
-    <img class="cobweb" src="/attachments/cX5JDM4gtExPKCPe7Xc8F.jpeg">
 
     <!-- chat button -->
     <button class="chat-btn" onclick="openChatBox()">💬</button>
@@ -141,7 +128,7 @@
         <h1>Minecord Systems</h1>
 
         <h2>About Minecord Systems:</h2>
-        <p>Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong> (viouniversal is disxord account/<p>
+        <p>Minecord Systems is a Discord bot community made by <strong>@viouniversal</strong>.</p>
 
         <h2>Bots We Have Made:</h2>
         <p>• Minecord Systems<br>• Event Announcer</p>
@@ -175,4 +162,5 @@ function sendEmail(){
 </script>
 
 </body>
-</html>                 
+</html>
+        
