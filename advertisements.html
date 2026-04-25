@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Advertisements – Minecord Systems</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
@@ -10,37 +11,26 @@
         body {
             margin:0;
             font-family: Arial, sans-serif;
-            background:#020617 url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg') center/cover no-repeat;
+            background:#0f172a url('https://cdn.discordapp.com/attachments/1338781863694565429/1497322868751601906/download-32.jpeg') center/cover no-repeat;
             color:#eee;
             min-height:100vh;
             padding:20px 10px;
             text-align:center;
-            position:relative;
-        }
-
-        /* cobweb top-left */
-        .cobweb {
-            width:140px;
-            position:absolute;
-            top:0;
-            left:0;
-            opacity:.9;
-            pointer-events:none;
         }
 
         h1 {
-            margin-top:120px;
-            font-size:2.2rem;
-            color:#ff7518;
-            text-shadow:0 0 12px #ff4500;
+            margin-top:80px;
+            font-size:2.4rem;
+            color:#4da6ff;
+            text-shadow:0 0 10px #1e90ff;
         }
 
         .nav-link {
             margin:15px 0 25px;
-            color:#ffa94d;
+            color:#7ec8ff;
         }
 
-        .nav-link a { color:#ff7a00; }
+        .nav-link a { color:#4da6ff; }
 
         .buttons-container {
             max-width:400px;
@@ -53,18 +43,18 @@
         .btn-ad {
             padding:12px;
             border-radius:8px;
-            background:linear-gradient(135deg, red, #ff7a00);
+            background:linear-gradient(135deg, #4da6ff, #1e90ff);
             color:white;
             text-decoration:none;
             font-weight:bold;
-            box-shadow:0 0 10px #ff4500;
+            box-shadow:0 0 10px #1e90ff;
         }
 
         .btn-ad:hover { transform:translateY(-3px); }
 
         .footer-text {
             margin-top:40px;
-            color:#ffa94d;
+            color:#7ec8ff;
             font-style:italic;
         }
 
@@ -77,10 +67,10 @@
             height:55px;
             border-radius:50%;
             border:none;
-            background:#ff7a00;
+            background:#4da6ff;
             font-size:26px;
             cursor:pointer;
-            box-shadow:0 0 10px #ff4500;
+            box-shadow:0 0 10px #1e90ff;
             z-index:9999;
         }
 
@@ -91,7 +81,7 @@
             right:20px;
             width:260px;
             background:#1e1e1e;
-            border:2px solid #ff7a00;
+            border:2px solid #4da6ff;
             border-radius:10px;
             padding:10px;
             display:none;
@@ -119,16 +109,13 @@
             font-weight:bold;
         }
 
-        .send-btn { background:#ff7a00; color:black; }
+        .send-btn { background:#4da6ff; color:black; }
         .close-btn { background:#444; color:white; }
 
     </style>
 </head>
 
 <body>
-
-    <!-- cobweb -->
-    <img class="cobweb" src="/attachments/cX5JDM4gtExPKCPe7Xc8F.jpeg">
 
     <!-- chat button -->
     <button class="chat-btn" onclick="openChatBox()">💬</button>
@@ -140,7 +127,7 @@
         <button class="close-btn" onclick="closeChatBox()">Close</button>
     </div>
 
-    <h1>🎃 Advertised Servers 🎃</h1>
+    <h1>Advertised Servers</h1>
 
     <div class="nav-link">
         <a href="index.html">Back to Minecord Systems home</a>
